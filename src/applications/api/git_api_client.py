@@ -1,8 +1,9 @@
-# import requests
+import requests
 
-# class GitHubAppClient:
 
-#     def search_repo(repo_name):
-#         r = requests.get("URL")
+class GitHubApiClient:
 
-#         return r.body.json()
+    def search_repo(repo_name):
+        r = requests.get("URL")
+
+        return r.body.json()

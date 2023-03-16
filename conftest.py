@@ -1,16 +1,25 @@
 import pytest
 
+
 class User:
-    def __init__(self, age=None):
+    def __init__(self, age) -> None:
+        # datadabase interaction
         self.age = age
-    
+
     def remove(self):
+        # database interaction
         self.age = None
 
-@pytest.fixture(scope='session')
+
+@pytest.fixture(scope="session")
 def user():
-    print('Create user')
+    # before test
+    print("Create user")
     user = User(42)
+
+    # pass user object to test
     yield user
-    print('Remove user')
+
+    # after test
+    print("Remove user")
     user.remove()
