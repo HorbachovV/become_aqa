@@ -16,13 +16,8 @@ def test_api_response_code():
     r = requests.get(f'{base_api_url}api/users')    
     response = Check(r)
     response.assert_status_code(200).validate(Get)
-    for item in r.json()['data']:
-        print(item)
 
 def test_api_single_user():
     r = requests.get(f'{base_api_url}api/users/1')  
     response = Check(r)
     response.assert_status_code(200).validate(Get)
-    for item in r.json():
-        print(item)
-    print(r.json()['data'])
