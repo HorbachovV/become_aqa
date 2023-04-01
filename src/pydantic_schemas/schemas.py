@@ -18,7 +18,7 @@ class BasePost(BaseModel):
         else:
             return value
 
-class Post(BaseModel):
+class Get(BaseModel):
     id: int
     email: EmailStr
     first_name: str
