@@ -1,6 +1,6 @@
-from pydantic import BaseModel, validator
+from pydantic import BaseModel, validator, EmailStr
 
-class Post(BaseModel):
+class BasePost(BaseModel):
     id: int
     title: str
 
@@ -17,3 +17,9 @@ class Post(BaseModel):
             raise ValueError('Title is not string')
         else:
             return value
+
+class Post(BaseModel):
+    id: int
+    email: EmailStr
+    first_name: str
+    last_name: str

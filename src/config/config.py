@@ -22,6 +22,7 @@ class Config:
             ]
 
         self.register("BASE_URL")
+        self.register("BASE_API_URL")
 
     def register(self, name):
         """
