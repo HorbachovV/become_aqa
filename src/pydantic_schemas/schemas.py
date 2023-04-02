@@ -23,3 +23,7 @@ class Get(BaseModel):
     email: EmailStr
     first_name: str
     last_name: str
+
+class Post(BaseModel):
+    name: str
+    job: str
