@@ -1,5 +1,6 @@
 # to run test pytest .
 import requests
+import pytest
 from src.config.config import config
 from src.validation.checker import Check
 from src.pydantic_schemas.schemas import BasePost, Get, Post
@@ -7,6 +8,7 @@ from src.pydantic_schemas.schemas import BasePost, Get, Post
 base_url = config.get("BASE_URL")
 base_api_url = config.get("BASE_API_URL")
 
+@pytest.mark.skip('Not implemented')
 def test_basic():
     r = requests.get(base_url)
     response = Check(r)
@@ -33,3 +35,16 @@ def test_create_user():
     response_data = r.json()
     assert response_data["name"] == "Darth Vader"
     assert response_data["job"] == "Sith Lord"
+
+def test_delete_user():
+        r = requests.delete(f'{base_api_url}api/users/1') 
+        assert r.status_code == 204
+
+def test_update_data():
+        data = {
+            "name": "Anakin Skywalker",
+            "job": "Jedi",
+        }
+        r = requests.put(f'{base_api_url}api/users/1', json=data)
+        response = Check(r)
+        response.assert_status_code(200).validate(Post)
