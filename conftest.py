@@ -1,5 +1,5 @@
 import pytest
-
+from applications.api.github_api import GitHubApiClient
 
 class User:
     def __init__(self, age) -> None:
@@ -23,3 +23,12 @@ def user():
     # after test
     print("Remove user")
     user.remove()
+
+# @pytest.fixture
+# def github_api_client():
+#     api_client = GitHubApiClient()
+#     api_client.login("username", "userpassword")
+
+#     yield github_api_client
+
+#     github_api_client.logout()

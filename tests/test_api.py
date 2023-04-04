@@ -10,11 +10,11 @@ from src.pydantic_schemas.schemas import BasePost, Get, Post
 base_url = config.get("BASE_URL")
 base_api_url = config.get("BASE_API_URL")
 
-# @pytest.mark.skip('Not implemented')
+@pytest.mark.skip('Not implemented')
 def test_basic():
     r = requests.get(base_url)
     response = Check(r)
-    response.assert_status_code(201).validate(BasePost).assert_request_method("GET")
+    response.assert_status_code(200).validate(BasePost).assert_request_method("GET")
 
 def test_api_response_code():
     r = requests.get(f'{base_api_url}api/users')    
