@@ -4,3 +4,5 @@ requests==2.28.2
 pydantic==1.10.7
 allure-pytest==2.13.1
 Faker==18.3.4
+selenium==4.8.2
+webdriver-manager==3.8.5

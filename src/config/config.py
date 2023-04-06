@@ -24,6 +24,7 @@ class Config:
         self.register("BASE_URL")
         self.register("BASE_API_URL")
         self.register("GITHUB_BASE_API")
+        self.register("GITHUB_LOGIN")
 
     def register(self, name):
         """

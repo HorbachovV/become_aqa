@@ -1,6 +1,7 @@
 # to run test pytest .
 # to run with report pytest --alluredir=allureress
 # to generate report run allure serve allureress
+# to run some specific test type in terminal pytest -k test_create_user or other
 import requests
 import pytest
 from src.config.config import config

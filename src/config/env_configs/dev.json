@@ -1,5 +1,6 @@
 {
     "BASE_URL": "https://my-json-server.typicode.com/typicode/demo/posts",
     "BASE_API_URL": "https://reqres.in/",
-    "GITHUB_BASE_API": "https://api.github.com/"
+    "GITHUB_BASE_API": "https://api.github.com/",
+    "GITHUB_LOGIN": "https://github.com/login"
 }
