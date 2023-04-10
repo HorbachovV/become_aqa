@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
+from src.applications.api.github_ui import GitHubUi
 
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
@@ -20,6 +21,5 @@ def test_github_failed_login_page():
     driver.find_element(By.ID, "login_field").send_keys("HorbachovVL")
     driver.find_element(By.ID, "password").send_keys("wrongpassword")
     driver.find_element(By.XPATH, '//*[@id="login"]/div[4]/form/div/input[11]').click()
-    driver.implicitly_wait(5)
     error_message = driver.find_element(By.XPATH, '//*[@id="js-flash-container"]/div/div/div').text
     assert error_message == "Incorrect username or password."

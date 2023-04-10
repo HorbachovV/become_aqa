@@ -10,10 +10,10 @@ class GitHubApiClient:
         
         return r
     
-    def login(username, password):
-        print(f"Do login with {username}:{password}")
-        token = requests.post("https://api.github.com/login")
+    # def login(username, password):
+    #     print(f"Do login with {username}:{password}")
+    #     token = requests.post("https://api.github.com/login")
 
-    def logout(username, password):
-        print("Do loguot")
+    # def logout(username, password):
+    #     print("Do loguot")
         
