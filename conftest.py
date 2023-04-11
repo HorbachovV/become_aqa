@@ -1,6 +1,13 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 import pytest
-from src.applications.api.github_api import GitHubApiClient
+driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
-class User:
-    def __init__(self):
-      pass
+
+@pytest.fixture
+def driver():
+    driver = webdriver.Chrome()
+    yield driver
+    driver.quit()
